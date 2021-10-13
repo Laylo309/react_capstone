@@ -1,8 +1,13 @@
+import './App.css';
 import NavbarComponent from './components/Navbar';
+import HeaderComponent from './components/Header';
 
 function App() {
   return (
-    <NavbarComponent />
+    <div className="AppComponent">
+      <NavbarComponent />
+      <HeaderComponent />
+    </div>
   );
 }
 
