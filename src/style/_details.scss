@@ -1,0 +1,109 @@
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $point == medium {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $point == large {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+}
+
+main {
+  background-color: #fa5192;
+}
+
+section {
+  .regions {
+    display: grid;
+    grid-template-columns: 100%;
+
+    @include breakpoint(medium) {
+      grid-template-columns: 50% 50%;
+    }
+
+    @include breakpoint(large) {
+      grid-template-columns: 33.3% 33.3% 33.3%;
+    }
+
+    li {
+      padding: 1rem;
+      background-color: #ce4277;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-family: "Gill Sans", sans-serif;
+        font-weight: 600;
+        width: 48%;
+      }
+
+      .region-confirmed {
+        width: 48%;
+
+        h3 {
+          font-family: "Lato", sans-serif;
+          font-weight: 400;
+          font-size: 1rem;
+          margin-top: 0.4rem;
+        }
+      }
+    }
+
+    li:nth-child(odd) {
+      @include breakpoint(small) {
+        background-color: #db4680;
+        background-image: url("../img/virus.svg");
+        background-repeat: no-repeat;
+        background-position: right -20px bottom -10px;
+        background-size: 70px;
+      }
+
+      @include breakpoint(large) {
+        background-color: #db4680;
+        background-image: url("../img/virus.svg");
+        background-repeat: no-repeat;
+        background-position: right -20px bottom -10px;
+        background-size: 70px;
+      }
+    }
+
+    li:nth-child(4n) {
+      @include breakpoint(medium) {
+        background-color: #db4680;
+        background-image: url("../img/virus.svg");
+        background-repeat: no-repeat;
+        background-position: right -20px bottom -10px;
+        background-size: 70px;
+      }
+
+      @include breakpoint(large) {
+        background-color: #ce4277;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: right -20px bottom -10px;
+        background-size: 70px;
+      }
+    }
+
+    li:nth-child(4n-3) {
+      @include breakpoint(medium) {
+        background-color: #db4680;
+        background-image: url("../img/virus.svg");
+        background-repeat: no-repeat;
+        background-position: right -20px bottom -10px;
+        background-size: 70px;
+      }
+    }
+  }
+}

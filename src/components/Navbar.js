@@ -1,19 +1,54 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaAngleLeft, FaCog, FaMicrophone } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { backHome } from '../redux/countries/countries';
+import back from '../img/back.svg';
 
-const NavbarComponent = () => (
+const Navbar = () => {
+  const dispatch = useDispatch();
+  const countrySelected = useSelector(
+    (state) => state.countries.countrySelected,
+  );
 
-  <Navbar className="justify-content-center">
-    <Nav>
-      <Nav.Item><FaAngleLeft /></Nav.Item>
-      <Nav.Item>Most viewed</Nav.Item>
-      <Nav.Item><FaMicrophone /></Nav.Item>
-      <Nav.Item><FaCog /></Nav.Item>
-    </Nav>
-  </Navbar>
+  if (countrySelected) {
+    return (
+      <header>
+        <nav>
+          <Link
+            className="back-button"
+            to="/home"
+            onClick={() => {
+              dispatch(backHome());
+            }}
+          >
+            <img src={back} alt="Logo" width="30" />
+          </Link>
+          <Link
+            to="/home"
+            onClick={() => {
+              dispatch(backHome());
+            }}
+          >
+            <h1>Covid-19 World Track</h1>
+          </Link>
+        </nav>
+      </header>
+    );
+  }
+  return (
+    <header>
+      <nav>
+        <Link
+          to="/home"
+          onClick={() => {
+            dispatch(backHome());
+          }}
+        >
+          <h1>Covid-19 World Track</h1>
+        </Link>
+      </nav>
+    </header>
+  );
+};
 
-);
-
-export default NavbarComponent;
+export default Navbar;
