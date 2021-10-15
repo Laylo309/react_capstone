@@ -40,6 +40,8 @@ section {
   .countries {
     display: grid;
     grid-template-columns: 50% 50%;
+    padding: 0;
+    text-decoration: none;
 
     @include breakpoint(medium) {
       grid-template-columns: 33.3% 33.3% 33.3%;
@@ -142,5 +144,9 @@ section {
     font-family: "Lato", sans-serif;
     font-weight: normal;
     font-size: 0.9rem;
+  }
+
+  a {
+    text-decoration: none;
   }
 }

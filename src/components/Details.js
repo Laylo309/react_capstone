@@ -27,7 +27,7 @@ const Details = ({ match }) => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="container">
+    <div className="hello">
       <main>
         <h2>{country.name.toUpperCase()}</h2>
         <h3>
@@ -39,7 +39,7 @@ const Details = ({ match }) => {
           {country.today_deaths}
         </h3>
       </main>
-      <section>
+      <section style={{ backgroundColor: '#EC4C8A' }}>
         <h4>STATS BY REGIONS</h4>
         <ul className="regions">
           {country.regions.map((r) => (

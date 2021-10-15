@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries, loadCountry } from '../redux/countries/countries';
 import Country from './Country';
+import Filter from './Filter';
 
 const Home = () => {
+  const [filter, setFilter] = useState('');
   const countries = useSelector((state) => state.countries.countries);
   const loading = useSelector((state) => state.countries.loading);
   const total = useSelector((state) => state.countries.total);
@@ -17,7 +19,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="hello">
       {total && (
         <main>
           <h2>WORLD</h2>
@@ -31,12 +33,13 @@ const Home = () => {
           </h3>
         </main>
       )}
-      <section>
+      <section style={{ backgroundColor: '#EC4C8A' }}>
         <h4>STATS BY COUNTRY</h4>
+        <Filter setFilter={setFilter} />
         {loading && <h2>loading...</h2>}
         <ul className="countries">
           {countries.map((country) => (
-            <Country key={country.id} country={country} />
+            <Country key={country.id} country={country} filter={filter} />
           ))}
         </ul>
       </section>
