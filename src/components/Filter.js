@@ -6,15 +6,15 @@ const Filter = (props) => {
     props.setFilter(e.target.value);
   };
   return (
-    <div className="input-group mb-2">
-      <input type="text" onChange={filterValues} className="form-control delete-shadow" placeholder="Search..." />
-      <span className="input-group-text"><GrSend /></span>
+    <div className="input-group mb-3">
+      <input type="text" onChange={filterValues} className="form-control delete-shadow" />
+      <span className="input-group-text">
+        <GrSend />
+      </span>
     </div>
   );
 };
-
 Filter.propTypes = {
   setFilter: PropTypes.func.isRequired,
 };
-
 export default Filter;

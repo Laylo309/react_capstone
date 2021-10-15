@@ -1,10 +1,11 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import countriesReducer from './countries/countries';
+import thunkMiddleware from 'redux-thunk';
+import reducer from './virus/virusInformation';
 
-export const rootReducer = combineReducers({ countries: countriesReducer });
-
-const store = createStore(rootReducer, applyMiddleware(logger, thunk));
+const store = createStore(
+  reducer,
+  applyMiddleware(thunkMiddleware, logger),
+);
 
 export default store;

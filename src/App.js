@@ -1,27 +1,30 @@
-import React from 'react';
+import { useEffect } from 'react';
 import {
-  Route,
-  HashRouter as Router,
-  Switch,
-  Redirect,
+  Route, Switch, useLocation,
 } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Details from './components/Details';
+import CountryDetails from './components/CountryDetails';
+import Main from './components/Main';
+import Header from './components/Header';
 
 function App() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/details/:id" component={Details} />
-        <Redirect from="/" to="/home" />
-      </Switch>
-    </Router>
+    <>
+      <Header />
+      <main>
+        <Switch>
+          <Route path="/country/:id">
+            <CountryDetails />
+          </Route>
+          <Route path="/">
+            <Main />
+          </Route>
+        </Switch>
+      </main>
+    </>
   );
 }
-
 export default App;

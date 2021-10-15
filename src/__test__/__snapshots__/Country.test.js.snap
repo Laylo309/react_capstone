@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Country test Test of Snapshot 1`] = `
+<div
+  className="d-flex justify-content-center align-items-center min-height"
+>
+  <div
+    className="spinner"
+  />
+</div>
+`;
