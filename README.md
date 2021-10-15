@@ -1,6 +1,6 @@
 # Covid-19 data traker
 
-> SPA web app that helps to get information about Covid-19
+> SPA web app which is created using React and Redux. This webapp helps to get new information about Covid-19.
 
 
 
@@ -15,6 +15,8 @@
 
 [NETLIFY](https://covid19-tracker-laylo309.netlify.app/#/home)
 
+## Live video presentation
+[Loom](https://www.loom.com/share/c85a279634ed4a0faea9f51943ba125e)
 
 ## Getting Started
 
@@ -72,6 +74,7 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+**Original design idea by Nelson Sakwa on Behance.**
 
 
 
