@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import {
   Route, Switch, useLocation,
 } from 'react-router-dom';
-import CountryDetails from './components/CountryDetails';
-import Main from './components/Main';
+import Details from './components/Details';
+import Home from './components/Home';
 import Header from './components/Header';
 
 function App() {
@@ -17,10 +17,10 @@ function App() {
       <main>
         <Switch>
           <Route path="/country/:id">
-            <CountryDetails />
+            <Details />
           </Route>
           <Route path="/">
-            <Main />
+            <Home />
           </Route>
         </Switch>
       </main>

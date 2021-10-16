@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-function CountryDetails() {
+function Details() {
   const params = useParams();
   const { id } = params;
   const country = Object.values(useSelector((state) => state.countries))
@@ -70,4 +70,4 @@ function CountryDetails() {
     </div>
   );
 }
-export default CountryDetails;
+export default Details;

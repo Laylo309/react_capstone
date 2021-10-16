@@ -4,7 +4,7 @@ import Country from './Country';
 import Filter from './Filter';
 import Corona from '../img/Corona.png';
 
-function Main() {
+function Home() {
   const [filter, setFilter] = useState('');
   const countries = useSelector((state) => state.countries);
   return (
@@ -33,4 +33,4 @@ function Main() {
     </div>
   );
 }
-export default Main;
+export default Home;
