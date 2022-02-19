@@ -2,8 +2,8 @@
 
 > SPA web app which is created using React and Redux. This webapp helps to get new information about Covid-19.
 
-[Screenshot](Screenshot_1.png)
-[Screenshot](Screenshot_2.png)
+![Screenshot](Screenshot_1.png)
+![Screenshot](Screenshot_2.png)
 
 ## Built With
 
